@@ -150,6 +150,9 @@ while True:
       address = socket.gethostbyname(hostname)
       # Connect to the origin server
       # ~~~~ INSERT CODE ~~~~
+      # Connect socket to the web server on port 80
+      # Use port 80 because it's the default for HTTP, and the target server listens on this port for HTTP requests
+      originServerSocket.connect((address, 80))
       # ~~~~ END CODE INSERT ~~~~
       print ('Connected to origin Server')
 
@@ -160,6 +163,9 @@ while True:
       # originServerRequest is the first line in the request and
       # originServerRequestHeader is the second line in the request
       # ~~~~ INSERT CODE ~~~~
+      # Making a request message to ask the web server for the file
+      originServerRequest = f"{method} {resource} {version}"
+      originServerRequestHeader = f"Host: {hostname}"
       # ~~~~ END CODE INSERT ~~~~
 
       # Construct the request to send to the origin server

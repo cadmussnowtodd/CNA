@@ -1,0 +1,53 @@
+commit 1190a85b2864784b018053cfa3ae16e8ab66cccc
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 12:40:08 2025 +0900
+
+    Tried to fix the no response problem according to Piazza solution, join with two spaces. But still not working
+
+commit 16d2c295fb59191aa68fc4955effec256f8f930a
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 12:28:15 2025 +0900
+
+    proceed with handling request for origin server and the format of the first line and second line. Test: terminal still no response
+
+commit 0a64bc57d9bc43c69113f179185c13ae96da0eac
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 12:11:24 2025 +0900
+
+    Successfully connected the origin server. AF_INET problem fixed.
+
+commit b208367fc2e7f929e2fbeafac547ae87286b3736
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 11:37:38 2025 +0900
+
+    implementation of cache hit. And fixed UnicodeEncodeError
+
+commit 6581788c7ae04ae04631ce8cfdd48909edeab6b3
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 11:22:24 2025 +0900
+
+    client connection and http request handling
+
+commit 9790cd9155d13edb30d20360406b32e4f7385958
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 11:10:55 2025 +0900
+
+    directory change
+
+commit cd47ce48d294e54ae3fe6d7e3acbc2070c6973bb
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 11:01:28 2025 +0900
+
+    name error
+
+commit 65c76bdaa3648dbee84e7702de0adb23d26e8883
+Author: cadmussnowtodd <cadmussnowtodd@gmail.com>
+Date:   Mon Mar 31 10:56:37 2025 +0900
+
+    setting the server and initialize, the listening module
+
+commit c8d179bb76ee272f8e9314bf9d59e165bb667adc
+Author: cadmussnowtodd <135714613+cadmussnowtodd@users.noreply.github.com>
+Date:   Mon Mar 31 10:11:41 2025 +0900
+
+    Initial commit

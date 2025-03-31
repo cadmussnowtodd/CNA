@@ -128,6 +128,8 @@ while True:
     # this can send the cached content back to the client quickly without contacting  orig server
     clientSocket.send(''.join(cacheData).encode('utf-8'))
     # need to consider UnicodeEncodeError.
+    cacheData = '  '.join(cacheData) # fix according to Piazza: Join cacheData  with 2 spaces as seperator
+
     # ~~~~ END CODE INSERT ~~~~
     cacheFile.close()
     print ('Sent to the client:')
@@ -163,6 +165,9 @@ while True:
       # originServerRequest is the first line in the request and
       # originServerRequestHeader is the second line in the request
       # ~~~~ INSERT CODE ~~~~
+      
+      # names are predefined
+      
       # Making a request message to ask the web server for the file
       originServerRequest = f"{method} {resource} {version}"
       originServerRequestHeader = f"Host: {hostname}"
@@ -186,10 +191,18 @@ while True:
 
       # Get the response from the origin server
       # ~~~~ INSERT CODE ~~~~
+      response = b""
       # ~~~~ END CODE INSERT ~~~~
 
       # Send the response to the client
       # ~~~~ INSERT CODE ~~~~
+      # using while loop to keep get data until it's all here
+      # until empty
+      while True:
+          data = originServerSocket.recv(BUFFER_SIZE)
+          if not data:
+              break
+          response += data
       # ~~~~ END CODE INSERT ~~~~
 
       # Create a new file in the cache for the requested file.
@@ -201,6 +214,9 @@ while True:
 
       # Save origin server response in the cache file
       # ~~~~ INSERT CODE ~~~~
+      
+      # have to send the web server's answer back to the client
+      clientSocket.sendall(response)
       # ~~~~ END CODE INSERT ~~~~
       cacheFile.close()
       print ('cache file closed')

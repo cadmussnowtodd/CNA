@@ -124,6 +124,10 @@ while True:
     # ProxyServer finds a cache hit
     # Send back response to client 
     # ~~~~ INSERT CODE ~~~~
+    # Send the saved file back to the client
+    # this can send the cached content back to the client quickly without contacting  orig server
+    clientSocket.send(''.join(cacheData).encode('utf-8'))
+    # need to consider UnicodeEncodeError.
     # ~~~~ END CODE INSERT ~~~~
     cacheFile.close()
     print ('Sent to the client:')

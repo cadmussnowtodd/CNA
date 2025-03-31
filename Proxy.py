@@ -138,6 +138,10 @@ while True:
     # Create a socket to connect to origin server
     # and store in originServerSocket
     # ~~~~ INSERT CODE ~~~~
+    # Create a new socket to connect to the originServer to get uncached content
+    # fixed: forget to add socket.AF_INET, AF_INET and SOCK_STREAM are common combination and could be used a lot.
+    # Connect client server successfully, but no response, showing blank in the terminal
+    originServerSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # ~~~~ END CODE INSERT ~~~~
 
     print ('Connecting to:\t\t' + hostname + '\n')
